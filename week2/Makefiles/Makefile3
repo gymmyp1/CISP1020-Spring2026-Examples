@@ -1,0 +1,19 @@
+# This is how you comment
+CC=gcc
+# compiler options
+CFLAGS=-c –Wall
+ 
+all: myprogram
+ 
+myprogram: main.o example.o
+	$(CC) main.c example.c -o exampleExe
+ 
+main: main.c example.h
+	$(CC) -c main.c
+ 
+example: example.c example.h
+	$(CC) -c example.c
+ 
+clean:
+	rm -rf *.o *.gch myprogram
+
